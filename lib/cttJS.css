@@ -2,6 +2,7 @@
 	--ctt_bg: 0,153,255;
 	--ctt_opactity: .8;
 	--ctt_font_size: .8rem;
+	--ctt_color: 255,255,255;
 }
 
 [data-cttJS_tooltip]{
@@ -9,7 +10,7 @@
 	display: none;
 	background: rgba(var(--ctt_bg),var(--ctt_opactity));
 	text-align: center;
-	color: rgba(var(--rgb_ft),.8);
+	color: rgba(var(--ctt_color),.8);
 	padding: .3rem;
 	border-radius: .2rem;
 	z-index: 999;
