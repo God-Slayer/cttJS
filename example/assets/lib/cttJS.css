@@ -1,18 +1,22 @@
 :root{
-	--ctt_bg: 0,153,255;
-	--ctt_opactity: .8;
+	--ctt_background: rgb(0,153,255);
+	--ctt_color: rgb(255,255,255);
 	--ctt_font_size: .8rem;
+	--ctt_text_align: center;
+	--ctt_text_transform: capitalize;
+	--ctt_border_radius: .2rem;
+	--ctt_padding: .3rem;
 }
 
 [data-cttJS_tooltip]{
 	position: absolute;
 	display: none;
-	background: rgba(var(--ctt_bg),var(--ctt_opactity));
-	text-align: center;
-	color: rgba(var(--rgb_ft),.8);
-	padding: .3rem;
-	border-radius: .2rem;
-	z-index: 999;
+	background: var(--ctt_background);
+	text-align: var(--ctt_text_align);
+	color: var(--ctt_color);
+	padding: var(--ctt_padding);
+	border-radius: var(--ctt_border_radius);
+	z-index: 999999;
 }
 [data-cttJS_tooltip].top::after{
   content: "";
@@ -22,7 +26,7 @@
 	transform: translateX(-50%);
   border-width: .8rem;
   border-style: solid;
-  border-color: rgba(var(--ctt_bg),var(--ctt_opactity)) transparent transparent transparent;
+  border-color: var(--ctt_background) transparent transparent transparent;
 	z-index: 999;
 }
 [data-cttJS_tooltip].bottom::after{
@@ -33,7 +37,7 @@
 	transform: translateX(-50%);
   border-width: .8rem;
   border-style: solid;
-  border-color: transparent transparent rgba(var(--ctt_bg),var(--ctt_opactity)) transparent;
+  border-color: transparent transparent var(--ctt_background) transparent;
 	z-index: 999;
 }
 [data-cttJS_tooltip].left::after{
@@ -44,7 +48,7 @@
   left: 100%;
   border-width: .8rem;
   border-style: solid;
-  border-color: transparent transparent transparent rgba(var(--ctt_bg),var(--ctt_opactity));
+  border-color: transparent transparent transparent var(--ctt_background);
 	z-index: 999;
 }
 [data-cttJS_tooltip].right::after{
@@ -55,11 +59,11 @@
 	transform: translateY(-50%);
   border-width: .8rem;
   border-style: solid;
-  border-color: transparent rgba(var(--ctt_bg),var(--ctt_opactity)) transparent transparent;
+  border-color: transparent var(--ctt_background) transparent transparent;
 	z-index: 999;
 }
 [data-cttJS_tooltip] span{
 	word-wrap: break-word;
 	font-size: var(--ctt_font_size);
-	text-transform: capitalize;
+	text-transform: var(--ctt_text_transform);
 }
