@@ -33,3 +33,18 @@ h1{
 	padding: .3rem 0;
 	cursor: pointer;
 }
+
+.custom_el{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.custom_el i{
+	color: pink;
+	font-size: 1.3rem;
+	margin-bottom: .5rem;
+}
+.custom_el span{
+	font-size: .8rem;
+}
