@@ -19,7 +19,7 @@ Load cttJS.js and cttJS.css:
   </head>
   
   <body>
-    <h1 class="vert_elem">Vertical Element</h1>
+    <h1 class="vert_elem">Vertical Tooltip</h1>
   </body>
   
 </html>
@@ -29,16 +29,26 @@ Load cttJS.js and cttJS.css:
 ```javascript
 $(document).ready(function(){
 
-  cttJS.Initialize();
-  
+  cttJS.Initialize({
+    background: 'rgba(0,153,255,.8)',
+    color: 'rgb(255,255,255)',
+    font_size: '.8rem',
+    text_align: 'center',
+    text_transform:'capitalize',
+    border_radius: '.2rem',
+    padding: '.3rem'
+  });
+
   cttJS.CreateTooltip('.vert_elem',{
-    text:'this tooltip is vertically aligned',
+    text:'this is vertically aligned with styling overridden',
     align:'vertical',
     offset:{
-      v_align:{
-        x:10,
-        y:32
-      }
+      x:10,
+      y:32
+    },
+    delay:500,
+    style:{
+      background:'#e36363'
     }
   });
   
@@ -49,24 +59,30 @@ $(document).ready(function(){
 ```javascript
 $(document).ready(function(){
   
-  // Add the tooltip to the project
-  cttJS.Initialize();
+  // Add the tooltip to the project and define the default styling of the tooltip
+  cttJS.Initialize({
+    background: 'rgba(0,153,255,.8)',
+    color: 'rgb(255,255,255)',
+    font_size: '.8rem',
+    text_align: 'center',
+    text_transform:'capitalize',
+    border_radius: '.2rem',
+    padding: '.3rem'
+  });
   
-  // selector -> target element class or id
+  // 'selector' -> target element's id or class
   cttJS.CreateTooltip('selector',{
-    text:'this tooltip is vertically aligned',
-    // align -> 'v', 'vertical', 'h', 'horizontal'
-    align:'vertical',
-    // offset -> use v_align for vertical alignment and h_align for horizontal alignment
+    text:'this is vertically aligned with styling overridden',
+    // align -> 'vertical','v','horizontal','h'
+    align:'v',
     offset:{
-      v_align:{
-        x:10,
-        y:32
-      },
-      h_align:{
-        x:0,
-        y:16
-      }
+      x:10,
+      y:32
+    },
+    delay:500,
+    // Custom styling can't be added to a specific element to override initialized styling
+    style:{
+      background:'#e36363'
     }
   });
   
