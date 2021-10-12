@@ -53,7 +53,7 @@ var cttJS={
     }
 
     // Set tooltip properties
-    if(ctt_prop!==undefined){
+    if(!$.isEmptyObject(ctt_prop)){
       custom_style=ctt_prop;
 
       for(var p in ctt_prop){
@@ -187,7 +187,7 @@ var cttJS={
     },ctt_interval);
   },
   ResetTooltipStyle:function(){
-    if(custom_style.length==undefined){
+    if($.isEmptyObject(custom_style)){
       for(var p in default_style){
         $(':root').css(`--ctt_${p}`,default_style[p]);
       }
